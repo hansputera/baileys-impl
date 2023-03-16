@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "outDir": "./dist",
+        "target": "ESNext",
+        "module": "CommonJS",
+        "strictNullChecks": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "pretty": true,
+        "removeComments": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
