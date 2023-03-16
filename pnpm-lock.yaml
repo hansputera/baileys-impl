@@ -2,18 +2,22 @@ lockfileVersion: 5.4
 
 specifiers:
   '@gampang-pkg/baileys-edge': ^5.1.0
+  '@hapi/boom': ^10.0.1
   '@typescript-eslint/eslint-plugin': '>=5.43.0'
   '@typescript-eslint/parser': '>=5.43.0'
   eslint: ^8.36.0
   eslint-config-xo: ^0.43.1
   eslint-config-xo-typescript: ^0.56.0
+  qrcode-terminal: ^0.12.0
   rimraf: ^4.4.0
   typescript: ^4.9.5
 
 dependencies:
-  '@gampang-pkg/baileys-edge': 5.1.0
+  '@gampang-pkg/baileys-edge': 5.1.0_qrcode-terminal@0.12.0
+  qrcode-terminal: 0.12.0
 
 devDependencies:
+  '@hapi/boom': 10.0.1
   '@typescript-eslint/eslint-plugin': 5.55.0_342y7v4tc7ytrrysmit6jo4wri
   '@typescript-eslint/parser': 5.55.0_vgl77cfdswitgr47lm5swmv43m
   eslint: 8.36.0
@@ -61,7 +65,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@gampang-pkg/baileys-edge/5.1.0:
+  /@gampang-pkg/baileys-edge/5.1.0_qrcode-terminal@0.12.0:
     resolution: {integrity: sha512-Tq9qVFSeU2n6jXAOVNSKnzLfpZC9sEOaQIQVDXJ32moe4CLAL1UeXQQlV4N0Vih+A5XiMdq9x9EirxEkuCcIZA==}
     peerDependencies:
       '@adiwajshing/keyed-db': ^0.2.4
@@ -89,6 +93,7 @@ packages:
       node-cache: 5.1.2
       pino: 7.11.0
       protobufjs: 6.11.3
+      qrcode-terminal: 0.12.0
       ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
@@ -97,11 +102,21 @@ packages:
       - utf-8-validate
     dev: false
 
+  /@hapi/boom/10.0.1:
+    resolution: {integrity: sha512-ERcCZaEjdH3OgSJlyjVk8pHIFeus91CjKP3v+MpgBNp5IvGzP2l/bRiD78nqYcKPaZdbKkK5vDBVPd2ohHBlsA==}
+    dependencies:
+      '@hapi/hoek': 11.0.2
+    dev: true
+
   /@hapi/boom/9.1.4:
     resolution: {integrity: sha512-Ls1oH8jaN1vNsqcaHVYJrKmgMcKsC1wcp8bujvXrHaAqD2iDYq3HoOwsxwo09Cuda5R5nC0o0IxlrlTuvPuzSw==}
     dependencies:
       '@hapi/hoek': 9.3.0
     dev: false
+
+  /@hapi/hoek/11.0.2:
+    resolution: {integrity: sha512-aKmlCO57XFZ26wso4rJsW4oTUnrgTFw2jh3io7CAtO9w4UltBNwRXvXIVzzyfkaaLRo3nluP/19msA8vDUUuKw==}
+    dev: true
 
   /@hapi/hoek/9.3.0:
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
@@ -1207,6 +1222,11 @@ packages:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
     dev: true
+
+  /qrcode-terminal/0.12.0:
+    resolution: {integrity: sha512-EXtzRZmC+YGmGlDFbXKxQiMZNwCLEO6BANKXG4iCtSIM0yqc/pappSx3RIKr4r0uh5JsBckOXeKrB3Iz7mdQpQ==}
+    hasBin: true
+    dev: false
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
