@@ -16,7 +16,7 @@ export const runImpl = async (sock?: ReturnType<typeof makeWASocket>): Promise<v
 
 	sock.ws.on('CB:message', async (n: BinaryNode) => {
 		const {fullMessage, decrypt} = decryptMessageNode(n, auth.state);
-		void decrypt();
+		await decrypt();
 
 		await messageUpsertHandler(fullMessage);
 	});
