@@ -11,14 +11,16 @@ export const runImpl = async (sock?: ReturnType<typeof makeWASocket>): Promise<v
 		browser: Browsers.macOS('Safari'),
 		// eslint-disable-next-line @typescript-eslint/naming-convention
 		printQRInTerminal: true,
-		syncFullHistory: true,
 	});
 
+	sock.ev.on('messages.upsert', console.log);
 	sock.ws.on('CB:message', async (n: BinaryNode) => {
 		const {fullMessage, decrypt} = decryptMessageNode(n, auth.state);
-		await decrypt();
+		await decrypt().catch(() => {
+			// Do nothing
+		});
 
-		await messageUpsertHandler(fullMessage);
+		await messageUpsertHandler(sock!, fullMessage);
 	});
 	sock.ev.on('connection.update', async conn => {
 		const error = conn.lastDisconnect?.error as Boom;
